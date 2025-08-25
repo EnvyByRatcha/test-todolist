@@ -26,16 +26,24 @@ Frontend: **React.js + Tailwind CSS**
 ```bash
 git clone https://github.com/EnvyByRatcha/test-todolist.git
 cd test-todolist
+```
 
+2. **ติดตั้ง dependencies**
+```bash
 cd api
 npm install
 
 cd app
 npm install
+```
 
+3. **ตั้งค่าไฟล์ .env**
+Backend: api/.env (DB_HOST, DB_USER, DB_PASSWORD, DB_NAME)
+
+4. **รันแอป**
+```bash
 cd api
 npm start
-
 cd app
 npm run dev
-
+```
