@@ -5,7 +5,7 @@
 [![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-3+-cyan)](https://tailwindcss.com/)
 [![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
 
-โปรเจกต์ตัวอย่าง **To-Do List Fullstack**  
+**To-Do List Fullstack**  
 Backend: **Express.js + MySQL**  
 Frontend: **React.js + Tailwind CSS**
 
@@ -13,10 +13,10 @@ Frontend: **React.js + Tailwind CSS**
 
 ## ✨ ฟีเจอร์หลัก
 - เพิ่ม, แก้ไข, ลบรายการงาน  
-- กรองตาม **สถานะ** และ **ความสำคัญ**  
-- ค้นหางานตามชื่อรายการ  
+- กรองตาม **status** และ **priority**  
+- ค้นหางานตามชื่อรายการ **debonce**  
 - Soft delete (เก็บข้อมูลรายการที่ถูกลบ)  
-- รองรับ **Pagination** และ **SearchBox**  
+- รองรับ **Pagination**
 
 ---
 
