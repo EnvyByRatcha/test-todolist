@@ -26,3 +26,16 @@ Frontend: **React.js + Tailwind CSS**
 ```bash
 git clone https://github.com/EnvyByRatcha/test-todolist.git
 cd test-todolist
+
+cd api
+npm install
+
+cd app
+npm install
+
+cd api
+npm start
+
+cd app
+npm run dev
+
