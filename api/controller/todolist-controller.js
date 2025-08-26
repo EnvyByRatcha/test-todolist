@@ -12,8 +12,6 @@ const getAllToDoLists = async (req, res, next) => {
     priority = "all",
   } = req.query;
 
-  console.log("req.query:", req.query);
-
   const pageNum = parseInt(page) > 0 ? parseInt(page) : 1;
   const pageSize = parseInt(limit) > 0 ? parseInt(limit) : 10;
   const offset = (pageNum - 1) * pageSize;
@@ -134,6 +132,30 @@ const createToDoList = async (req, res, next) => {
     });
   }
 
+  if (!due) {
+    return res.status(400).json({
+      success: false,
+      message: `due is required}`,
+    });
+  }
+
+  const isoDateRegex = /^\d{4}-\d{2}-\d{2}$/;
+  if (!isoDateRegex.test(due)) {
+    return res.status(400).json({
+      success: false,
+      message: "Due date must be in YYYY-MM-DD format",
+    });
+  }
+
+  const dateObj = new Date(due);
+  const isValid = !isNaN(dateObj.getTime());
+  if (!isValid) {
+    return res.status(400).json({
+      success: false,
+      message: "Due date is invalid",
+    });
+  }
+
   try {
     const query = `
   INSERT INTO todolists (title,status,priority,due) 
@@ -202,6 +224,30 @@ const updateToDoLists = async (req, res, next) => {
     return res.status(400).json({
       success: false,
       message: `Priority must be one of: ${validStatus.join()}`,
+    });
+  }
+
+   if (!due) {
+    return res.status(400).json({
+      success: false,
+      message: `due is required}`,
+    });
+  }
+
+  const isoDateRegex = /^\d{4}-\d{2}-\d{2}$/;
+  if (!isoDateRegex.test(due)) {
+    return res.status(400).json({
+      success: false,
+      message: "Due date must be in YYYY-MM-DD format",
+    });
+  }
+
+  const dateObj = new Date(due);
+  const isValid = !isNaN(dateObj.getTime());
+  if (!isValid) {
+    return res.status(400).json({
+      success: false,
+      message: "Due date is invalid",
     });
   }
 
