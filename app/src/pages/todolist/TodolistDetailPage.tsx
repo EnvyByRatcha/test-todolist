@@ -55,13 +55,13 @@ function TodolistDetailPage() {
   };
 
   return (
-    <div className="max-w-md mx-auto space-y-2">
+    <div className="max-w-md mx-auto space-y-2 py-20">
       <div className="flex justify-between py-2">
         <p className="text-2xl font-semibold">Update Todolist</p>
         <Link
           to="/todolist"
           className="inline-flex items-center justify-center px-4 py-2 
-        rounded-lg bg-red-600 text-white font-semibold text-sm 
+        rounded-lg bg-red-600 text-white fonts-semibold text-sm 
         hover:bg-red-700 transition-colors"
         >
           Back

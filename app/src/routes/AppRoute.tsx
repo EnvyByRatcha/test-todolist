@@ -2,9 +2,15 @@ import { createBrowserRouter } from "react-router-dom";
 import TodolistPage from "../pages/todolist/TodolistPage";
 import TodolistCreatePage from "../pages/todolist/TodolistCreatePage";
 import TodolistDetailPage from "../pages/todolist/TodolistDetailPage";
+import NotFoundPage from "../pages/notfound/NotFoundPage";
+import MainPage from "../pages/main/MainPage";
 
 const router = createBrowserRouter([
-{
+  {
+    path: "/",
+    element: <MainPage />,
+  },
+  {
     path: "/todolist",
     element: <TodolistPage />,
   },
@@ -18,7 +24,7 @@ const router = createBrowserRouter([
   },
   {
     path: "*",
-    element: <TodolistPage />,
+    element: <NotFoundPage />,
   },
 ]);
 

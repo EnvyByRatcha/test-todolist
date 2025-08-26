@@ -35,7 +35,7 @@ function TodolistPage() {
   } = useTodolist();
 
   return (
-    <>
+    <div className="w-5xl mx-auto py-20">
       <div className="flex justify-between py-2">
         <p className="text-2xl font-semibold">Todolist</p>
         <Link
@@ -77,7 +77,7 @@ function TodolistPage() {
         limit={limit}
         setLimit={setLimit}
       />
-    </>
+    </div>
   );
 }
 

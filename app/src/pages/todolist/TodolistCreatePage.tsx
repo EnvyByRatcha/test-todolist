@@ -20,7 +20,7 @@ function TodolistCreatePage() {
   };
 
   return (
-    <div className="max-w-md mx-auto space-y-2">
+    <div className="max-w-md mx-auto space-y-2 py-20">
       <div className="flex justify-between py-2">
         <p className="text-2xl font-semibold">Create Todolist</p>
         <Link
