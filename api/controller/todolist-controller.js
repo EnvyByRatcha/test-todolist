@@ -132,28 +132,23 @@ const createToDoList = async (req, res, next) => {
     });
   }
 
-  if (!due) {
-    return res.status(400).json({
-      success: false,
-      message: `due is required}`,
-    });
-  }
+  if (due) {
+    const isoDateRegex = /^\d{4}-\d{2}-\d{2}$/;
+    if (!isoDateRegex.test(due)) {
+      return res.status(400).json({
+        success: false,
+        message: "Due date must be in YYYY-MM-DD format",
+      });
+    }
 
-  const isoDateRegex = /^\d{4}-\d{2}-\d{2}$/;
-  if (!isoDateRegex.test(due)) {
-    return res.status(400).json({
-      success: false,
-      message: "Due date must be in YYYY-MM-DD format",
-    });
-  }
-
-  const dateObj = new Date(due);
-  const isValid = !isNaN(dateObj.getTime());
-  if (!isValid) {
-    return res.status(400).json({
-      success: false,
-      message: "Due date is invalid",
-    });
+    const dateObj = new Date(due);
+    const isValid = !isNaN(dateObj.getTime());
+    if (!isValid) {
+      return res.status(400).json({
+        success: false,
+        message: "Due date is invalid",
+      });
+    }
   }
 
   try {
@@ -227,28 +222,23 @@ const updateToDoLists = async (req, res, next) => {
     });
   }
 
-   if (!due) {
-    return res.status(400).json({
-      success: false,
-      message: `due is required}`,
-    });
-  }
+  if (due) {
+    const isoDateRegex = /^\d{4}-\d{2}-\d{2}$/;
+    if (!isoDateRegex.test(due)) {
+      return res.status(400).json({
+        success: false,
+        message: "Due date must be in YYYY-MM-DD format",
+      });
+    }
 
-  const isoDateRegex = /^\d{4}-\d{2}-\d{2}$/;
-  if (!isoDateRegex.test(due)) {
-    return res.status(400).json({
-      success: false,
-      message: "Due date must be in YYYY-MM-DD format",
-    });
-  }
-
-  const dateObj = new Date(due);
-  const isValid = !isNaN(dateObj.getTime());
-  if (!isValid) {
-    return res.status(400).json({
-      success: false,
-      message: "Due date is invalid",
-    });
+    const dateObj = new Date(due);
+    const isValid = !isNaN(dateObj.getTime());
+    if (!isValid) {
+      return res.status(400).json({
+        success: false,
+        message: "Due date is invalid",
+      });
+    }
   }
 
   try {
