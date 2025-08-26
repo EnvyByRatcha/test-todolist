@@ -15,15 +15,6 @@ const PORT = process.env.PORT || 3000;
 
 app.use("/api/v1/todolists", todolistRouter);
 
-// app.all("*", (req, res, next) => {
-//   const err = new Error(`Path ${req.originalUrl} not found`);
-//   err.statusCode = 404;
-//   err.status = "fail";
-
-//   next(err);
-// });
-app.use(apiError);
-
 app.listen(PORT, () => {
   console.log("server start");
 });
